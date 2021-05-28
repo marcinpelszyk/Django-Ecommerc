@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
+from store.models import Product
 
 def index(request):
-    return render(request, 'core/index.html', {})
+    products = Product.objects.all().filter(is_avalible=True)
+    return render(request, 'core/index.html', {'products': products})
 
