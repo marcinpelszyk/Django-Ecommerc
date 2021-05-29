@@ -24,7 +24,7 @@
 <div class="container">
 
 <header class="section-heading">
-	<a href="./store.html" class="btn btn-outline-primary float-right">Zobacz wszystko</a>
+	<a href="{% url 'store:home'%}" class="btn btn-outline-primary float-right">Zobacz wszystko</a>
 	<h3 class="section-title">Popularne produky</h3>
 </header><!-- sect-heading -->
 
@@ -33,7 +33,7 @@
 	{% for product in products %}
 	<div class="col-md-3">
 		<div class="card card-product-grid">
-			<a href="./product-detail.html" class="img-wrap"> <img src="{{ product.images.url }}"> </a>
+			<a href="." class="img-wrap"> <img src="{{ product.images.url }}"> </a>
 			<figcaption class="info-wrap">
 				<a href="." class="title">{{ product.name }}</a>
 				<div class="price mt-1">{{ product.price }} zł</div> <!-- price-wrap.// -->

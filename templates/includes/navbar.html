@@ -40,7 +40,7 @@
                 
                     <div class="dropdown-menu">
                         {% for category in links %}
-                        <a class="dropdown-item" href="category.get_absolute_url">{{ category.name }}</a>
+                        <a class="dropdown-item" href="{{category.get_absolute_url}}">{{ category.name }}</a>
                         {% endfor %}
                     </div>
                 

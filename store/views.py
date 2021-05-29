@@ -1,3 +1,4 @@
+from category.views import category_list
 from django.shortcuts import render, get_object_or_404
 
 from .models import Product
@@ -22,3 +23,9 @@ def store(request, slug=None):
     }
     return render(request, 'store/store.html', context)
 
+def product_detail(request, slug, product_slug):
+    try:
+        single_product = Product.objects.get(category__slug=slug, slug=product_slug)
+    except Exception as e:
+        raise e
+    return render(request, 'store/product_detail.html', {'single_product': single_product})
